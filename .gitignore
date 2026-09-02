@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw / processed datasets
+data/raw/
+data/processed/
+*.zip
+*.npz
+
+# Model checkpoints
+outputs/checkpoints/
+*.pt
+*.pth
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
