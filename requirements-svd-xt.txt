@@ -1,0 +1,12 @@
+# Dedicated pilot environment only; do not install into the VideoSwin/base environment.
+# Install torch==2.11.0 from the cu128 index separately (see guide).
+torch==2.11.0
+diffusers==0.35.1
+transformers==4.55.4
+accelerate==1.10.1
+huggingface-hub==0.35.3
+safetensors==0.6.2
+numpy==2.2.6
+Pillow==11.3.0
+imageio==2.37.0
+imageio-ffmpeg==0.6.0
