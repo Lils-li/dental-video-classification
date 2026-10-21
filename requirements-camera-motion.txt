@@ -1,0 +1,3 @@
+# Use a dedicated environment; setup instructions are in docs/mendeley_camera_motion.md.
+-r requirements-svd-xt.txt
+opencv-python-headless==4.12.0.88
