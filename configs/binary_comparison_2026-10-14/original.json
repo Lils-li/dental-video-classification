@@ -1,0 +1,47 @@
+{
+    "seed":  42,
+    "epochs":  15,
+    "early_stopping":  false,
+    "balanced_sampling":  true,
+    "loss":  "unweighted_cross_entropy",
+    "optimizer":  "AdamW",
+    "learning_rate":  0.001,
+    "weight_decay":  0.0001,
+    "weights":  "Swin3D_T_Weights.KINETICS400_V1",
+    "data_root":  "data/raw/Vident-real",
+    "val_metadata":  "data/labels/quadrant_metadata.csv",
+    "frame_source":  "GT",
+    "num_clips":  5,
+    "frames_per_clip":  16,
+    "image_size":  224,
+    "resize":  "PIL_RGB_bilinear_square",
+    "temporal_positions":  [
+                               0.1,
+                               0.3,
+                               0.5,
+                               0.7,
+                               0.9
+                           ],
+    "mean":  [
+                 0.485,
+                 0.456,
+                 0.406
+             ],
+    "std":  [
+                0.229,
+                0.224,
+                0.225
+            ],
+    "backbone_mode":  "train_during_training_legacy_policy",
+    "trainable_parameters":  "head_only",
+    "cpu_threads":  4,
+    "deterministic_algorithms":  true,
+    "clip_batch_size":  1,
+    "gradient_average_clips":  5,
+    "selection_metric":  "validation_macro_f1",
+    "sampling_seed_rule":  "seed_plus_epoch",
+    "test_used":  false,
+    "arm":  "original",
+    "train_metadata":  "data/labels/quadrant_metadata.csv",
+    "expected_train_segments":  81
+}

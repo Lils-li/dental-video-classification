@@ -1,0 +1,13 @@
+# Direct dependencies observed in the existing Python 3.11.9 environment.
+# This is a baseline specification, not a complete transitive lockfile.
+# CUDA 12.6 build identifiers are retained for torch and torchvision.
+# Installation in a fresh environment has not yet been validated.
+matplotlib==3.11.2
+numpy==2.4.6
+opencv-python==5.0.0.93
+openpyxl==3.1.5
+pandas==3.0.5
+Pillow==12.3.0
+scikit-learn==1.9.1
+torch==2.14.0+cu126
+torchvision==0.29.0+cu126

@@ -1,26 +1,75 @@
-# Virtual environment
+# Virtual environments
 .venv/
+venv/
+env/
 
-# Python
+# Python and notebook caches
 __pycache__/
 *.py[cod]
-
-# Jupyter
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Raw / processed datasets
-data/raw/
-data/processed/
+# Local datasets and annotations pending sharing review
+/data/raw/
+/data/processed/
+/data/labels/*.csv
 *.zip
-*.npz
 
-# Model checkpoints
-outputs/checkpoints/
+# All local results, checkpoints, and the original manual Excel audit
+# Ignoring outputs preserves files in place; it does not back them up.
+/outputs/
 *.pt
 *.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
 
-# VS Code
+# Temporary files and local logs
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.log
+
+# Personal editor settings and operating-system files
 .vscode/
-
-# Windows
 Thumbs.db
+.DS_Store
+
+# Entire local research data tree, including extracted Mendeley inputs
+/data/
+
+# Checkpoint directories and generated video artifacts anywhere in the project
+checkpoints/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.mpg
+*.mpeg
+*.m4v
+*.wmv
+
+# Local environment variables, authentication material, and secrets
+.env
+.env.*
+.envrc
+.python-version
+.conda/
+.secrets/
+secrets/
+credentials/
+.aws/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials.*.json
+service_account*.json
+service-account*.json
