@@ -5,7 +5,8 @@ This runner reads the five source_relative_path/source_sha256 entries from photo
 Use the dedicated environment and requirements-camera-motion.txt from docs/mendeley_camera_motion.md. No new dependencies. Pull the new commit, then run this one PowerShell command from the repository root:
 
 ```powershell
-& "$env:USERPROFILE\.venvs\dental_svd_xt\Scripts\python.exe" .\src\synthetic\mendeley_motion_comparison.py --dataset-root 'C:\Users\ESAI406_student2\Mendeley dataset 19.4.2024\Teeth or Dental Image Dataset' --yaw-run .\outputs\runs\mendeley_camera_yaw_02 --parallax-output .\outputs\runs\mendeley_parallax_01 --handheld-output .\outputs\runs\mendeley_handheld_01 --device cuda
+$env:MENDELEY_DENTAL_ROOT = '<local dataset directory>'
+& "$env:USERPROFILE\.venvs\dental_svd_xt\Scripts\python.exe" .\src\synthetic\mendeley_motion_comparison.py --dataset-root $env:MENDELEY_DENTAL_ROOT --yaw-run .\outputs\runs\mendeley_camera_yaw_02 --parallax-output .\outputs\runs\mendeley_parallax_01 --handheld-output .\outputs\runs\mendeley_handheld_01 --device cuda
 ```
 
 Both output roots must not exist. No previous run, source image or original Method B is modified. The baseline model revision is reused exactly; required weights are downloaded into the ignored cache on PC 2 if absent. Model/source/script hashes and package versions are recorded. If the prior metadata has a different schema, stop and inspect it rather than running another source selection.

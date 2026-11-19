@@ -1,0 +1,5 @@
+# Install the CUDA PyTorch and TorchVision wheels separately (see docs/viddent_linux.md).
+numpy==2.4.6
+pandas==3.0.5
+Pillow==12.3.0
+scikit-learn==1.9.1

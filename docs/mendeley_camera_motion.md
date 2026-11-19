@@ -20,7 +20,8 @@ Stop on installation errors. This does not modify the base environment. If that 
 After pulling the approved commit on PC 2, run all five experiments from the repository root with this one command:
 
 ```powershell
-& "$env:USERPROFILE\.venvs\dental_svd_xt\Scripts\python.exe" .\src\synthetic\mendeley_camera_motion.py --dataset-root 'C:\Users\ESAI406_student2\Mendeley dataset 19.4.2024\Teeth or Dental Image Dataset' --output-dir .\outputs\runs\mendeley_camera_yaw_01 --device cuda
+$env:MENDELEY_DENTAL_ROOT = '<local dataset directory>'
+& "$env:USERPROFILE\.venvs\dental_svd_xt\Scripts\python.exe" .\src\synthetic\mendeley_camera_motion.py --dataset-root $env:MENDELEY_DENTAL_ROOT --output-dir .\outputs\runs\mendeley_camera_yaw_01 --device cuda
 ```
 
 Choose a new output root for every attempt; no automatic retries/overwrite. CPU depth inference is available with --device cpu. Rasterization remains CPU NumPy; large images may take substantial time/RAM. Runtime/VRAM fit on PC 2 are unmeasured. Default processor settings preserve aspect ratio and learned depth is interpolated to the exact original dimensions, robustly normalized at the 2nd/98th percentiles and lightly bilateral-smoothed, as in Method B. The model is loaded once; there is one depth-network forward pass per photo, no per-frame estimation.
